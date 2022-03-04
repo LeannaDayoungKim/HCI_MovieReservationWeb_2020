@@ -1,0 +1,140 @@
+<html>
+<style>
+  .button {
+    margin-top: 5%;
+    margin-left: 1%;
+    margin-right: 1%;
+    width: 60;
+    height: 100;
+  }
+</style>
+
+  <div style="float:right; text-align: right; margin-right: 5%;">
+    <button style="margin-top:10px; font-size: 1.2em;"><a style="color: black; text-decoration:none;" href="./main.html">HOME</a></button><br>
+    <text style="margin-right:5px; font-size: large;">KimEwha@naver.com</text>
+    <button style="font-size: 1.2em; margin-top: 5px;"><a style="color: black; text-decoration:none;" href="./main.html">log out</a></button>
+  </div>
+  <br><br><br>
+  <h1 style="text-align: center;">MEGAMOMO</h1>
+
+<body> 
+  <center> 
+    <nav id="topMenu" >
+      <ul>
+              <li><a class="menuLink" href="./location.html">Location</a></li>
+              <li style="background-color: #4d4d4d;"><a class="menuLink" href="./movieSB.html">Movie schedule/ Book</a></li>
+              <li><a class="menuLink" href="./myTicket.html">My Ticket</a></li>
+      </ul>
+    </nav>
+    <style>
+      #topMenu {            
+              height: 40px; 
+              width: 1000px; 
+      }
+      #topMenu ul li {                       
+              list-style: none;            
+              color: white;               
+              background-color: #2d2d2d; 
+              float: left;                
+              line-height: 40px;          
+              vertical-align: middle;     
+              text-align: center;         
+      }
+      #topMenu .menuLink {                               
+              text-decoration:none;                      
+              color: white;                              
+              display: block;                            
+              width: 300px;      
+              font-size: 18px;  
+              font-weight: bold;                         
+              font-family: "Trebuchet MS", Dotum, Arial; 
+      }
+      #topMenu .menuLink:hover {           
+              color: red;                   
+              background-color: #4d4d4d;    
+      }
+    </style>
+  
+    <p>
+      <div style="display: table; margin-left: auto; margin-right: auto;">
+        <div style="margin-top: 5%; display: flex;">
+          <div><input type="text" style="font-size: 24px; width: 380px; height: 35px;" name="movieId" /></div>
+          <div style="margin-left: 5px;"><button style="height: 35px; font-size: 1.4em;"><a style="color: black; text-decoration:none;" href="./search.html">search</a></button></div>
+        </div>
+      </div>
+    </p>
+    </center>
+
+<div style="display: table; margin-left: auto; margin-right: auto; margin-top: 3%;">
+<div style="display: flex;">
+  <div style="text-align: center; border: 1px solid; color: black; width: 700; height: 400;">
+      <div style="border:1px solid; color: black; background:rgb(213,213,213); font-size:1.2em; padding:5px; float: left; height: 50px; line-height:50px;">entrance</div>
+      <div style="border:1px solid; color: black; background:rgb(213,213,213); font-size:1.2em; padding:5px; float: right; height: 50px; line-height:50px;">exit</div>
+      <div style="border:1px solid; color: black; background:rgb(213,213,213); font-size:1.2em; padding:5px; margin: 0 auto; width: 50%">screen</div>
+
+     <div style="margin-top: 7%; font-size: 1.5em;">
+       <button class="button" id="button1" onclick="colorchange(id)" style="background:rgb(234,234,234);">H1</button>
+       <button class="button" id="button2" onclick="colorchange(id)" style="background:rgb(234,234,234);">H2</button>
+       <button class="button" id="button3" onclick="colorchange(id)" style="background:rgb(234,234,234);">H3</button>
+       <button class="button" id="button4" onclick="colorchange(id)" style="background:rgb(234,234,234);">H4</button>
+       <button class="button" id="button5" onclick="colorchange(id)" style="background:rgb(234,234,234);">H5</button> <br>
+       <button class="button" id="button6" onclick="colorchange(id)" style="background:rgb(234,234,234);">H6</button>
+       <button class="button" id="button7" onclick="colorchange(id)" style="background:rgb(234,234,234);">H7</button>
+       <button class="button" id="button8" onclick="colorchange(id)" style="background:rgb(234,234,234);">H8</button>
+       <button class="button" id="button9" onclick="colorchange(id)" style="background:rgb(234,234,234);">H9</button>
+       <button class="button" id="button10" onclick="colorchange(id)" style="background:rgb(234,234,234);">H10</button>
+     </div>
+  </div>
+  <div style="margin-left: 4%; margin-top: 5%; font-size: 1.5em; white-space: nowrap;">
+    <text>Seat number:</text><br>
+    <select value="0" id="num" type="selectNum" name='num' style="margin-top: 5px; width:100%; text-align-last:center; font-size: large;" onChange="setValues();">
+      <option value=""></option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+    </select><br>
+    <button style="margin-top: 200px; width: 120%; font-size: 1.2em;"><a style="color: black; text-decoration:none;" href="./movieSB.html">Go Back</a></button><br>
+    <button style="margin-top: 9%; width: 120%; font-size: 1.2em;" onclick="payment()">Payment</button>
+  </div>
+</div>
+</div>
+</html>
+<script>
+var temp;
+var count=0;
+function setValues(){
+  count = document.getElementById("num");
+  count = count.options[count.selectedIndex].value;
+  temp = count;
+  for(var i=1; i<=10; i++){
+    document.getElementById("button"+i).style.backgroundColor="rgb(234,234,234)";
+  }
+}
+function colorchange(id){
+  var background = document.getElementById(id).style.backgroundColor;
+  if(background == "rgb(234, 234, 234)"){
+    if(count==0) alert("Choose the number of the seat(s).");
+    else if(temp==0) alert("You can only choose "+count+" seat(s).");
+    else{
+      document.getElementById(id).style.backgroundColor = "rgb(255,193,158)";
+      temp = temp-1;
+    }
+  }
+  if(background == "rgb(255, 193, 158)"){
+    document.getElementById(id).style.backgroundColor = "rgb(234,234,234)";
+    temp = temp+1;
+  }
+}
+function payment(){
+  if(count==0) alert("Choose the number of the seat(s).");
+  else if(temp>0) alert("Selected seats are less than seat number.");
+  else window.open("./payment.html", "Payment", "width=500, height=600, top=100, left=200");
+}
+</script>
